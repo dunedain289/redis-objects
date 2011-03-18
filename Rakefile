@@ -7,9 +7,9 @@ begin
     gem.name = "redis-objects"
     gem.summary = %Q{Map Redis types directly to Ruby objects}
     gem.description = %Q{Map Redis types directly to Ruby objects. Works with any class or ORM.}
-    gem.email = "nate@wiger.org"
-    gem.homepage = "http://github.com/nateware/redis-objects"
-    gem.authors = ["Nate Wiger"]
+    gem.email = "petersen@dunedain289.com"
+    gem.homepage = "http://github.com/dunedain289/redis-objects"
+    gem.authors = ["Nate Wiger", "Scott Petersen"]
     gem.add_development_dependency "bacon", ">= 0"
     gem.requirements << 'redis, v2.1.1 or greater'
     gem.add_dependency('redis', '>= 2.1.1')  # ALSO: update spec/spec_helper.rb
