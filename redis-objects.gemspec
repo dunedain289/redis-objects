@@ -5,13 +5,13 @@
 
 Gem::Specification.new do |s|
   s.name = %q{redis-objects}
-  s.version = "0.5.1"
+  s.version = "0.6.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Nate Wiger"]
-  s.date = %q{2011-05-23}
+  s.authors = ["Nate Wiger", "Scott Petersen"]
+  s.date = %q{2011-03-18}
   s.description = %q{Map Redis types directly to Ruby objects. Works with any class or ORM.}
-  s.email = %q{nate@wiger.org}
+  s.email = %q{petersen@dunedain289.com}
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
@@ -46,11 +46,17 @@ Gem::Specification.new do |s|
     "spec/redis_objects_model_spec.rb",
     "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://github.com/nateware/redis-objects}
+  s.homepage = %q{http://github.com/dunedain289/redis-objects}
   s.require_paths = ["lib"]
   s.requirements = ["redis, v2.1.1 or greater"]
-  s.rubygems_version = %q{1.7.2}
+  s.rubygems_version = %q{1.5.2}
   s.summary = %q{Map Redis types directly to Ruby objects}
+  s.test_files = [
+    "spec/redis_namespace_compat_spec.rb",
+    "spec/redis_objects_instance_spec.rb",
+    "spec/redis_objects_model_spec.rb",
+    "spec/spec_helper.rb"
+  ]
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
