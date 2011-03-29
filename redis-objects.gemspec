@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{redis-objects}
-  s.version = "0.6.0"
+  s.version = "0.6.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Nate Wiger", "Scott Petersen"]
-  s.date = %q{2011-03-18}
+  s.date = %q{2011-03-29}
   s.description = %q{Map Redis types directly to Ruby objects. Works with any class or ORM.}
   s.email = %q{petersen@dunedain289.com}
   s.extra_rdoc_files = [
