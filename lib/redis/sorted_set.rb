@@ -285,6 +285,24 @@ class Redis
     def range_size(min, max)
       redis.zcount(key, min, max)
     end
+    
+    # ZPOP implemented with ZRANGE + ZREMRANGEBYRANK within a MULTI/EXEC
+    def zpop
+      v,c = redis.multi do
+        redis.zrange(key, 0, 0)
+        redis.zremrangebyrank(key, 0, 0)
+      end
+      from_redis(v).first
+    end
+
+    # ZREVPOP implemented with ZRANGE + ZREMRANGEBYRANK within a MULTI/EXEC
+    def zrevpop
+      v,c = redis.multi do
+        redis.zrange(key, -1, -1)
+        redis.zremrangebyrank(key, -1, -1)
+      end
+      from_redis(v).first
+    end
 
     private
 
