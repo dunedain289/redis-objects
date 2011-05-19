@@ -705,6 +705,23 @@ describe Redis::SortedSet do
     @set.delete_if{|m| m == 'b'}
     @set.size.should == 3
   end
+  
+  it "should support the fancy zpop command" do
+    @set.should.be.empty
+    @set["a"] = 1
+    @set["b"] = 3
+    @set["c"] = 58
+    @set["d"] = 8204
+    
+    @set.zpop.should == "a"
+    @set.zrevpop.should == "d"
+    @set.size.should == 2
+    
+    @set.zpop.should == "b"
+    @set.zpop.should == "c"
+    @set.zpop.should.be.nil
+    @set.zpop.should.be.nil
+  end
 
   it "should support renaming sets" do
     @set.should.be.empty
